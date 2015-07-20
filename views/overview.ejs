@@ -1,0 +1,19 @@
+overview alt
+
+
+<% metatitle="Glossar 1 Übersicht"%>
+Overview:
+<ul>
+<% for (var i=0; i<articles.length; i++) {%>
+<li>
+<a href="articles/<%= articles[i].id%>">
+<h4><%= articles[i].kicker%></h4>
+<h3><%= articles[i].title%></h3>
+<img src="<%= articles[i].teaserImage.replace('w1-h1','w400-h400-oo')%>"/>
+</a>
+<a href="http://www.welt.de/<%= articles[i].id%>">Original lesen</a>
+</li>
+
+<% } %>
+</ul>
+<%- articles.length %>
