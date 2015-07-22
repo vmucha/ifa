@@ -1,4 +1,48 @@
 artikelcontent
-<p ng-repeat="paragraph in paragraphs" ng-bind-html="to_trusted(paragraph.content)">
+<p ng-repeat="paragraph in paragraphs2" ng-bind-html="to_trusted(paragraph.content)">
 </p>
+
+
+    <div class="js-ajax-content static-overlay" data-js-page="overlay">
+        <div class="overlay-article glossar-overlay">
+            <div class="overlay-article-content">
+                <a ui-shref="glossar"
+                   class="overlay-article-link-close-top overlay-article-link js-overlay-close">
+                    
+                </a>
+
+                <h1 class="overlay-article-title">
+                    HEADLINE
+                </h1>
+        <span class="overlay-article-excerpt">
+			INTRO
+        </span>
+
+                
+                socialbar
+                <div class="overlay-article-text">
+                    opener
+                        <img class="img-resposive" src="url" alt=""/>
+                    
+                    video
+                        <div class="js-videoplayer" data-video-poster="teaserimg" data-videos-urls="sources"></div>
+
+
+                    <p ng-repeat="paragraph in paragraphs" ng-bind-html="to_trusted(paragraph.content)"></p>
+
+					xhtml
+					</div>
+                <div class="overlay-article-end">
+                  
+                    
+                    <a href="close"
+                       class="button white overlay-article-link overlay-article-link-close-bottom js-overlay-close">
+                        <i class="icon-close_icon"></i>
+                        Ansicht schließen
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
 

@@ -1,7 +1,9 @@
 
  var app = angular.module('ifa', ["ui.router"])
     app.config(['$stateProvider','$urlRouterProvider','$locationProvider',function($stateProvider, $urlRouterProvider,$locationProvider){
-      $locationProvider.html5Mode(true);
+       $locationProvider.html5Mode({enabled:true,  requireBase: true});
+      $locationProvider.hashPrefix('!');
+
       // For any unmatched url, send to /route1
       $urlRouterProvider.otherwise("/")
       
