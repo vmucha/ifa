@@ -17,7 +17,7 @@
             controller: 'OverviewController'
         })
         .state('glossar.article',{
-            url: "/glossar/:category/:articleId",
+            url: "/:articleId",
             templateUrl: "views/article.ejs",
             controller: 'ArticleController'
         })
