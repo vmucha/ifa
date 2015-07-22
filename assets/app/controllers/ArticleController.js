@@ -1,8 +1,19 @@
-app.controller('ArticleController', ['$scope','articleService','$routeParams','$sce',function ($scope,articleService,$routeParams,$sce) {
+app.controller('ArticleController', ['$scope','articleService','$stateParams','$sce',function ($scope,articleService,$stateParams,$sce) {
     $scope.content = [];
     $scope.paragraphs = [];
-    var articleId = $routeParams.id;
-
+    $scope.prepareOverlay = function(id) {
+        articleService.getContent(articleId,function(data){
+            $scope.content = data[0];
+            for(var i=0;i<data[0].paragraphs.length;i++) {
+                for(var u=0;u<data[0].paragraphs[i].parts.length;u++) {
+                    $scope.paragraphs.push(data[0].paragraphs[i].parts[u]);    
+                }
+            }
+        });
+    };
+    var articleId = $stateParams.articleId
+    console.log(articleId);
+//var articleId = 144213754;
     function init() { 
         console.log("init art");
         articleService.getContent(articleId,function(data){
@@ -18,6 +29,10 @@ app.controller('ArticleController', ['$scope','articleService','$routeParams','$
         });
     }
     init();
+
+     
+
+
      $scope.to_trusted = function(html_code) {
         return $sce.trustAsHtml(html_code);
     };

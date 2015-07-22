@@ -1,29 +1,25 @@
-var app = angular.module("ifa",['ngRoute','ngSanitize']);
 
-app.config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
-  $locationProvider.html5Mode({enabled:true,  requireBase: true});
-      $locationProvider.hashPrefix('!');
-
-  $routeProvider
-      .when('/',
-      {
-        templateUrl:'views/start',
-        controller:'StartController'
-      })
-      .when('/article/:id',
-      {
-        templateUrl:'views/article',
-        controller:'ArticleController'
-      })
-      .when('/glossar/:name',
-      {
-        templateUrl: 'views/overview',
-        controller: 'OverviewController'
-      })
-      .when('/star/:starID', 
-          {
-              controller: 'showStarController',
-              templateUrl: '/views/star'
-          })
-      .otherwise({ redirectTo: '/' });
-}]);
+ var app = angular.module('ifa', ["ui.router"])
+    app.config(function($stateProvider, $urlRouterProvider,$locationProvider){
+      $locationProvider.html5Mode(true);
+      // For any unmatched url, send to /route1
+      $urlRouterProvider.otherwise("/")
+      
+      $stateProvider
+        .state('start', {
+            url: "/",
+            templateUrl: "views/start.ejs",
+            controller:'StartController'
+        })
+        .state('glossar', {
+            url: "/glossar/:category",
+            templateUrl: "views/overview.ejs",
+            controller: 'OverviewController'
+        })
+        .state('glossar.article',{
+            url: "/glossar/:category/:articleId",
+            templateUrl: "views/article.ejs",
+            controller: 'ArticleController'
+        })
+        
+    })

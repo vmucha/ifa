@@ -5,7 +5,6 @@
     <%- partial ('partials/facebook.ejs') %> 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="fragment" content="!">
 
     
     <!--  
@@ -40,7 +39,7 @@
     <div class="container">
 
       <%- partial ('partials/header.ejs') %> 
-      <div ng-view></div>
+      <div ui-view></div>
     </div>
     <!--
         Client-side Templates
@@ -97,6 +96,7 @@
     <script src="/js/dependencies/angular.min.js"></script>
     <script src="/js/dependencies/angular-route.min.js"></script>
     <script src="/js/dependencies/angular-sanitize.js"></script>
+    <script src="/js/dependencies/angular-ui-router.min.js"></script>
     <script src="/js/dependencies/jquery-2.1.4.min.js"></script>
     <script src="/js/custom.js"></script>
     <script src="/js/masonry.pkgd.min.js"></script>
@@ -105,7 +105,7 @@
     <script src="/app/controllers/OverviewController.js"></script>
     <script src="/app/controllers/StartController.js"></script>
     <script src="/app/directives/afterrender.js"></script>
-    <script src="/app/directives/articlecard.js"></script>
+    <script src="/app/directives/articlecards.js"></script>
     <script src="/app/services/articleService.js"></script>
     <script src="/app/services/overviewService.js"></script>
     <script src="/app/services/startService.js"></script>

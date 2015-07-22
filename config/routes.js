@@ -38,6 +38,12 @@ module.exports.routes = {
    // controller:'HomeController',
    // action:'index'
   },
+  '/route1': {
+    view:'homepage'
+  },
+  '/article/:id': {
+    view:'homepage'
+  },
   'get /views/:file': {
     controller: 'PartialController',
     action: 'getPartial'

@@ -1,6 +1,6 @@
 Index Kachelübersicht
-<div>
+<div class="startBg">
 	<div ng-repeat="category in cat">
-		<a href="/glossar/{{category.name}}"><span>{{category.name}}</span></a>
+		<a ui-sref="glossar({category:category.name})"><span>{{category.name}}</span></a>
 	</div>
 </div>
