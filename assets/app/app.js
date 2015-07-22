@@ -1,6 +1,6 @@
 
  var app = angular.module('ifa', ["ui.router"])
-    app.config(function($stateProvider, $urlRouterProvider,$locationProvider){
+    app.config(['$stateProvider','$urlRouterProvider','$locationProvider',function($stateProvider, $urlRouterProvider,$locationProvider){
       $locationProvider.html5Mode(true);
       // For any unmatched url, send to /route1
       $urlRouterProvider.otherwise("/")
@@ -22,4 +22,4 @@
             controller: 'ArticleController'
         })
         
-    })
+    }]);

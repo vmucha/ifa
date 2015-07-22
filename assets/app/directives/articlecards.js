@@ -1,4 +1,4 @@
-app.directive("articleCards",[function ($scope) {
+app.directive("articleCards",function () {
 	return {
 		restrict:"EA",
     scope:false,
@@ -16,5 +16,5 @@ app.directive("articleCards",[function ($scope) {
     	
 	}
 
-}]);
+});
 

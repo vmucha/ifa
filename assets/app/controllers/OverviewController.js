@@ -28,7 +28,7 @@
 
 }]);
 */
-app.controller('OverviewController',function($scope,$location,overviewService,$stateParams) {
+app.controller('OverviewController',['$scope','$location','overviewService','$stateParams',function($scope,$location,overviewService,$stateParams) {
     console.log($stateParams.category);
     $scope.articles = {};
     $scope.loadArticles = {loading: true};
@@ -42,4 +42,4 @@ app.controller('OverviewController',function($scope,$location,overviewService,$s
     }
     init();
 
-});
+}]);
