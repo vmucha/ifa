@@ -30,7 +30,7 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
-    prerender: require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000/').set('prerenderToken', 'YOUR_TOKEN'),
+    prerender: require('prerender-node').set('prerenderServiceUrl', 'http://prerender-env.elasticbeanstalk.com:3000/').set('prerenderToken', 'YOUR_TOKEN'),
      order: [
        'startRequestTimer',
        'cookieParser',
