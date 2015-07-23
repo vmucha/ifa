@@ -20,20 +20,23 @@ module.exports = {
 			}
 			console.log(cat);
 			var request = require('request');
-			request('http://www.welt.de/'+cat+'/?config=iphone_ressort', function (error, response, body) {
+			var url = "http://www.welt.de/reportage/?config=ifa_glossar_1";
+			request(url, function (error, response, body) {
 					  if (!error && response.statusCode == 200) {
 					  		var bdata = JSON.parse(body);
 					  		var length = bdata.articles.length;
 					  		var ids=[];
 					  		for(var i=0;i<length;i++) {
-					  			bdata.articles[i].teaserImage = bdata.articles[i].teaserImage.replace("w1-h1","w400-h400-oo");
+					  			if(bdata.articles[i].teaserImage) {
+					  				bdata.articles[i].teaserImage = bdata.articles[i].teaserImage.replace("w1-h1","w400-h400-oo");
+					  			}
 					  			ids.push(bdata.articles[i].id);
 					  		}
 					  		Artikel.create(bdata.articles).exec(function(err,data) {
 					  			console.log("articles angelegt");
 					  			Category.create({
 					  				name:cat,
-					  				url:"http://www.welt.de/"+cat+"/?config=iphone_ressort",
+					  				url:url,
 					  				id:req.param('category'),
 					  				articles:ids
 					  			}).exec(function(err,data) {
