@@ -31,7 +31,7 @@ module.exports = {
 					  		var ids=[];
 					  		for(var i=0;i<length;i++) {
 					  			if(bdata.articles[i].teaserImage) {
-					  				bdata.articles[i].teaserImage = bdata.articles[i].teaserImage.replace("w1-h1","w400-h400-oo");
+					  				bdata.articles[i].teaserImage = bdata.articles[i].teaserImage.replace("w1-h1","ci16x9-w400");
 					  			}
 					  			ids.push(bdata.articles[i].id);
 					  		}
