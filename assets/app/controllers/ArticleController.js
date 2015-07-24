@@ -1,6 +1,10 @@
 app.controller('ArticleController', ['$scope','articleService','$stateParams','$sce',function ($scope,articleService,$stateParams,$sce) {
     $scope.content = [];
     $scope.paragraphs = [];
+    $scope.body = "";
+    $scope.headline = "";
+    $scope.intro = "";
+    $scope.articleType = "";
     $scope.prepareOverlay = function(id) {
         articleService.getContent(articleId,function(data){
             $scope.content = data[0];
@@ -8,6 +12,8 @@ app.controller('ArticleController', ['$scope','articleService','$stateParams','$
                 for(var u=0;u<data[0].paragraphs[i].parts.length;u++) {
                     $scope.paragraphs.push(data[0].paragraphs[i].parts[u]);    
                 }
+               $scope.body += data[0].paragraphs[i].content;
+               console.log("body",$scope.body);
             }
         });
     };
@@ -17,15 +23,22 @@ app.controller('ArticleController', ['$scope','articleService','$stateParams','$
     function init() { 
         console.log("init art");
         articleService.getContent(articleId,function(data){
-            console.log("cb2 art");
+            console.log("cb2 art",data);
             //$scope.content = getRaw(data[0].paragraphs[0].parts[1].content);
-            $scope.content = data[0];
-            for(var i=0;i<data[0].paragraphs.length;i++) {
-                for(var u=0;u<data[0].paragraphs[i].parts.length;u++) {
-                    $scope.paragraphs.push(data[0].paragraphs[i].parts[u]);    
+            
+            var data = data[0];
+            $scope.content = data;
+            $scope.articleType = data.type;
+            $scope.headline = data.title;
+            $scope.intro = data.intro;
+            $scope.kicker = data.kicker;
+            for(var i=0;i<data.paragraphs.length;i++) {
+                for(var u=0;u<data.paragraphs[i].parts.length;u++) {
+                    $scope.paragraphs.push(data.paragraphs[i].parts[u]);    
                 }
+                $scope.body += data.paragraphs[i].openinigTag+data.paragraphs[i].content+data.paragraphs[i].openinigTag.replace("<","</");
             }
-            console.log($scope.paragraphs);
+            console.log("body",$scope.body);
         });
     }
     init();

@@ -40,7 +40,7 @@ module.exports = {
 		//res.send(req.param('id'));*/
 
 			var request = require('request');
-			request('http://www.welt.de/article'+req.param('id')+'/?noredirect=true&config=jsn', function (error, response, body) {
+			request('http://www.welt.de/article'+req.param('id')+'/?noredirect=true&config=jsn&'+Math.random(), function (error, response, body) {
 					  if (!error && response.statusCode == 200) {
 					  		var bdata = JSON.parse(body);
 					  		res.send(bdata.articles);
