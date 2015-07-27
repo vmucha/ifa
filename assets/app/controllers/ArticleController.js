@@ -5,6 +5,7 @@ app.controller('ArticleController', ['$scope','articleService','$stateParams','$
     $scope.headline = "";
     $scope.intro = "";
     $scope.articleType = "";
+    $scope.loaded = false;
 
     var articleId = $stateParams.articleId;
     console.log(articleId);
@@ -21,6 +22,7 @@ app.controller('ArticleController', ['$scope','articleService','$stateParams','$
             $scope.kicker = data.kicker;
             $scope.paragraphs = data.processedParagraphs;
             $scope.body = data.body;
+            $scope.loaded = true;
         });
     }
     init();
