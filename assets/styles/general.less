@@ -1,0 +1,193 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    .font-default();
+    width: 100%;
+    height: 100%;
+    color: @text-default;
+    background-color: #282828;
+    margin: 0;
+    position: relative;
+}
+
+html.touch {
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;
+}
+
+.content-wrapper {
+    background-color: @dark;
+    width: 100%;
+    /*overflow: scroll;*/
+    position: relative;
+    min-height: 100%;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+object, embed {
+    outline: 0;
+}
+
+a {
+    outline: 0;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 980px;
+    }
+}
+
+@media screen and (max-width: @viewport-mobile-max-width) {
+
+}
+
+// fallback <= IE8
+.oldBrowser,
+.header-logo-fallback {
+  display: none;
+}
+
+.oldIE {
+  .header-logo {
+    display: none;
+  }
+  .header-logo-fallback {
+    display: block;
+  }
+
+  .site-header-navigation-button {
+  display: none;
+  }
+
+  .oldBrowser {
+    display: block;
+    height: 500px;
+    margin-top: 150px;
+    position: relative;
+
+    .message {
+      color: #fff;
+      margin: 0 auto;
+      text-align: center;
+      width: 750px;
+
+      span {
+        font-family: "freight-display-pro", "Times New Roman", serif;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 60px;
+        letter-spacing: 0.025em;
+        margin: 0 0 50px 0;
+      }
+
+      p{
+        font-size: 24px;
+        margin-bottom: 45px;
+
+        a {
+          color: #2c7bbe;
+          border-bottom: 1px solid #2c7bbe;
+          text-transform: uppercase;
+
+        }
+      }
+
+      img {
+        margin: 0 20px;
+        width: 116px;
+      }
+
+    }
+  }
+
+  .content-wrapper {
+    .image-container,
+    .page-start,
+    .page-community,
+    .page-glossar,
+    .page-story,
+    .back-to-top-link,
+    .page-footer-socialbar,
+    .page-footer-feedback {
+      display: none;
+    }
+
+    .back-to-top-bar,
+    .page-footer {
+      display: block !important;
+    }
+  }
+
+
+
+}
+
+/*
+.oldIE {
+  .oldBrowser {
+    color: #fff;
+    display: block;
+    z-index: 999999999999999999999;
+    position: fixed;
+    background-color: #282828;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0px;
+
+    .message {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 750px;
+      height: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+
+      span {
+        font-family: "freight-display-pro", "Times New Roman", serif;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 60px;
+        letter-spacing: 0.025em;
+        margin: 0 0 50px 0;
+      }
+
+      p{
+        font-size: 24px;
+        margin-bottom: 45px;
+
+        a {
+          color: #2c7bbe;
+          border-bottom: 1px solid #2c7bbe;
+          text-transform: uppercase;
+
+        }
+      }
+
+      img {
+        margin: 0 20px;
+        width: 116px;
+      }
+    }
+  }
+}
+*/

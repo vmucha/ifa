@@ -1,0 +1,50 @@
+.reportage {
+    .image-container .fadeImage {
+        background-image: @title-image-mobil-story;
+    }
+}
+
+.glossar {
+    .image-container .fadeImage {
+        background-image: @title-image-mobil-glossar;
+    }
+}
+
+.community {
+    .image-container .fadeImage {
+        background-image: @title-image-mobil-community;
+    }
+}
+
+.simulation {
+    .image-container .fadeImage {
+        background-image: @title-image-mobil-game;
+    }
+}
+
+
+@media screen and (min-width: @viewport-mobile-max-width) {
+    .reportage {
+        .image-container .fadeImage {
+            background-image: @title-image-story;
+        }
+    }
+
+    .glossar {
+        .image-container .fadeImage {
+            background-image: @title-image-glossar;
+        }
+    }
+
+    .community {
+        .image-container .fadeImage {
+            background-image: @title-image-community;
+        }
+    }
+
+    .simulation {
+        .image-container .fadeImage {
+            background-image: @title-image-game;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.vertical-align-middle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.full {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: @viewport-mobile-max-width) {
+    .vertical-align-middle {
+        position: static;
+        top: 0;
+        transform: translateY(0);
+    }
+}
+
+// Samsung Galaxy Tab landscape mode detection
+@media screen and (min-width: @viewport-tablet-galaxy-min-width) and (max-width: @viewport-tablet-galaxy-max-width) {
+  .hidden-md {
+    .touch & {
+      display: none !important;
+    }
+  }
+
+  .visible-md {
+    .touch & {
+      display: block !important;
+    }
+  }
+}
