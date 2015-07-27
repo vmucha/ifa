@@ -23,6 +23,23 @@ app.controller('ArticleController', ['$scope','articleService','$stateParams','$
             $scope.paragraphs = data.processedParagraphs;
             $scope.body = data.body;
             $scope.loaded = true;
+            showPopup();
+        });
+    }
+
+    function showPopup() {
+         $('.overlay').popup({
+            autoopen: true,
+            type: 'overlay',
+            scrolllock: true,
+            color: '#000',
+            opacity: 0.8,
+            autozindex: false,
+            detach: true,
+            //transition: 'all 0.5s',
+            closeelement: '.js-overlay-close',
+            vertical: 'top',
+            keepfocus: true
         });
     }
     init();

@@ -1,4 +1,4 @@
-  <div ng-show="loaded" class="overlay-article glossar-overlay">
+  <div ng-show="loaded" class="glossar-overlay">
     <div class="overlay-article-content" ui-view>
 
 
@@ -43,7 +43,7 @@
                 <div class="overlay-article-end">
                   
                     
-                    <a href="close"
+                    <a ui-sref="glossar({category:category.name})"
                        class="button white overlay-article-link overlay-article-link-close-bottom js-overlay-close">
                         <i class="icon-close_icon"></i>
                         Ansicht schließen
