@@ -1,0 +1,268 @@
+.angst-navigation-button() {
+    position: fixed;
+    right: 0;
+    z-index: 99;
+    height: 55px;
+    width: 55px;
+    right: 10px;
+    top: 15px;
+
+    @media screen and (min-width: @screen-sm-min) {
+        width: 55px;
+    }
+}
+
+.site-header {
+    .site-header-logo {
+        color: #fff;
+        position: fixed;
+        left: 20px;
+        top: 28px;
+        font-size: 60px;
+        z-index: 999999;
+        height: 25px;
+        width: 177px;
+    }
+    .site-header-navigation-button {
+        .angst-navigation-button();
+
+        svg {
+            fill: #fff;
+            height: 25px;
+        }
+
+        .fullscreen-overlay & {
+            display: none;
+        }
+    }
+}
+
+.site-navigation {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    text-align: center;
+    display: none;
+
+    ul {
+        list-style: none;
+    }
+
+    .site-navigation-link {
+        color: #fff;
+        font-size: 30px;
+    }
+
+    .site-navigation-link-title {
+        .font-navigation-title();
+        text-transform: uppercase;
+        display: block;
+    }
+
+    .site-navigation-link-subtitle {
+        .font-navigation-subtitle();
+        display: block;
+        color: #c2c2c2;
+    }
+}
+
+// ## Navigation-Items
+// <ul/>
+// * * *
+// [1] on mobile screens we need less margin. On desktop 25% seems ok.
+.site-navigation-items {
+    padding: 0;
+    margin: 0 10px; // [1]
+    @media screen and (min-width: @screen-sm-min) {
+        margin: 0 25%; // [1]
+    }
+}
+
+// ## Navigation-Items
+// <li/>
+// * * *
+// [1] from bootstrap
+// [2] more space between link and separator
+.site-navigation-items__item {
+    margin-bottom: 25px;
+    line-height: 28px;
+    opacity: .5;
+    transition: all .4s linear;
+
+    &:hover,
+    &:active,
+    &.active {
+        opacity: 1;
+    }
+
+    // linear gradient after each item
+    &:after {
+        margin-top: 23px; // [2]
+        content: "";
+        display: block;
+        height: 1px;
+        width: 60%;
+        #gradient > .horizontal-three-colors(rgba(0, 0, 0, 0), #FFF, 50%, rgba(0, 0, 0, 0)); // [1]
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.site-navigation-social {
+    margin: 60px 0 55px;
+    text-align: center;
+
+    a {
+        i {
+            height: 34px;
+            color: #aeaeae;
+            padding: 0 35px;
+            font-size: 30px;
+        }
+
+        &:hover,
+        &:active {
+            i {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.site-navigation-feedback {
+    display: block;
+    .font-navigation-subtitle();
+    color: #aeaeae;
+    text-transform: uppercase;
+
+    &:hover,
+    &:active {
+        color: #fff;
+    }
+}
+
+/**
+ * ## Navigation close button
+ */
+.site-navigation__button-close {
+    .angst-navigation-button();
+}
+
+@media screen and (max-width: @viewport-mobile-max-width) {
+    .site-header {
+        left: 0;
+        top: 0;
+        position: fixed;
+        height: 52px;
+        width: 100%;
+        z-index: 9;
+        background-color: rgba(0, 0, 0, 0.4);
+
+        .site-header-logo {
+            position: absolute;
+        }
+
+        .site-header-navigation-button {
+            position: absolute;
+        }
+    }
+
+    .site-navigation {
+        padding: 20% 0 10%;
+        overflow: scroll;
+
+        .site-navigation-items__item {
+            height: 60px;
+            margin: 0;
+
+            &.first {
+                height: 40px;
+
+                a {
+                    height: 40px;
+                    line-height: 40px;
+                    vertical-align: middle;
+                    padding: 0;
+                }
+            }
+
+            &:after {
+                margin: 0 auto;
+            }
+
+            a {
+                display: block;
+                height: 60px;
+                line-height: 1.3;
+                padding: 9px;
+            }
+        }
+
+        .site-navigation-link-title {
+            font-size: 17px;
+        }
+
+        .site-navigation-link-subtitle {
+            font-size: 12px;
+        }
+
+        .site-navigation__button-close {
+            top: 8px;
+            right: 0;
+            width: 50px;
+            height: 40px;
+
+            svg {
+                width: 17px;
+                height: 17px;
+            }
+        }
+
+        .site-navigation-social {
+            margin: 30px 0 30px;
+
+            a {
+                i {
+                    font-size: 15px;
+                    color: #aeaeae;
+                    padding: 0 28px;
+                }
+
+                &:hover,
+                &:active {
+                    i {
+                        color: #fff;
+
+                    }
+                }
+            }
+        }
+
+        .site-navigation-feedback {
+            font-size: 12px;
+        }
+    }
+
+    .site-header .site-header-logo {
+        height: 17px;
+        width: 97px;
+        top: 17px;
+        left: 17px;
+    }
+
+    .site-header .site-header-navigation-button {
+        top: 8px;
+        right: 0;
+        width: 50px;
+        height: 40px;
+    }
+
+    .site-header .site-header-navigation-button svg {
+        height: 17px;
+        width: 17px;
+    }
+}

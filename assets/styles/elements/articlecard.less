@@ -1,0 +1,123 @@
+@card-item--padding-left: 12px;
+@card-item--padding-right: 12px;
+@card-item--padding-top: 16px;
+
+.card-item {
+    background-color: #efefef;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    text-align: left;
+
+    .icon-ldquo {
+        display: none;
+    }
+
+    figure {
+        position: relative;
+    }
+
+    .card-item-icon-video {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        height: 50px;
+        width: 50px;
+    }
+
+    /*&.question .icon-ldquo {
+        display: inline-block;
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        font-size: 24px;
+    }*/
+
+    .card-item-tag {
+        .font-glossar-box-tag();
+        padding-left: @card-item--padding-left;
+        padding-top: @card-item--padding-top;
+        display: inline-block;
+        color: @interaktive-glossar;
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+
+    .card-item-type {
+        .font-glossar-box-type();
+        padding-right: @card-item--padding-right;
+        padding-top: @card-item--padding-top;
+        display: inline-block;
+        float: right;
+        color: @text-info;
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+
+    .card-item-title {
+        .font-glossar-box-headline();
+        padding-top: 5px;
+        padding-left: @card-item--padding-left;
+        padding-right: @card-item--padding-right;
+        margin: 0 0 20px;
+        min-height: 60px;
+
+        &:hover,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+
+    .card-item-link {
+        .font-glossar-box-button();
+        display: block;
+        width: 204px;
+        height: 32px;
+        line-height: 32px;
+        border: 1px solid @interaktive-glossar;
+        margin: 0 auto;
+        color: #020202;
+        vertical-align: middle;
+        text-align: center;
+        text-transform: uppercase;
+        background-color: #fff;
+
+        &:hover,
+        &:active {
+            color: @interaktive-glossar;
+            background-color: #000;
+            border: 1px solid @interaktive-glossar;
+        }
+    }
+
+    .card-item-bottomLine {
+        margin: 20px 12px 5px;
+        overflow: hidden;
+    }
+
+    .card-item-postedBy {
+        float: left;
+    }
+
+    .card-item-comments {
+        float: right;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .js-dynamic-cards .card-item-container {
+        width: 100%;
+    }
+
+    .card-item {
+        margin-bottom: 15px;
+    }
+}
