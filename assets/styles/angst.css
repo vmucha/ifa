@@ -1,0 +1,195 @@
+html body {
+	
+  font-family: "freight-sans-pro", sans-serif;
+  width: 100%;
+  height: 100%;
+  color: #2c2c2c;
+  background-color: #282828;
+  margin: 0;
+  position: relative;
+
+  }
+
+
+  .js .image-container.active {
+  opacity: 1;
+}
+.js .image-container {
+  opacity: 0;
+  -webkit-transition: opacity 2s ease;
+  transition: opacity 2s ease;
+}
+.image-container {
+  height: 1200px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #000;
+  position: relative;
+  margin: 0 0 50px 0;
+  margin: 0 0 3.125rem 0;
+}
+
+
+.image-container .grid {
+  margin: 0;
+  max-width: 100%;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.grid {
+  max-width: 69em;
+  list-style: none;
+  margin: 30px auto;
+  margin: 1.875rem auto;
+  padding: 0;
+}
+
+
+.image-container .grid .grow {
+  bottom: 0;
+  height: 100%;
+}
+.image-container .grid .tablerow {
+  display: table-row;
+}
+
+.image-container .grid .tablecell {
+  display: table-cell;
+  background-size: auto 100%;
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+
+@media screen and (max-width: 1023px)
+.image-container .image-container-content {
+  bottom: 45px;
+  bottom: 2.8125rem;
+}
+.image-container .image-container-content {
+  bottom: 50px;
+  bottom: 3.125rem;
+  position: absolute;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1023px)
+.image-container .image-container-content h1 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  margin: 0 auto 30px;
+  margin: 0 auto 1.875rem;
+  line-height: 30px;
+}
+.image-container .image-container-content h1, .image-container .image-container-content span.headline {
+  font-family: "freight-display-pro", sans-serif;
+  font-size: 50px;
+  font-size: 3.125rem;
+  line-height: 60px;
+  font-weight: 600;
+  letter-spacing: .025em;
+  display: block;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  margin: 0 auto 60px;
+  margin: 0 auto 3.75rem;
+  max-width: 940px;
+}
+h1, .h1 {
+  font-size: 36px;
+  font-size: 2.25rem;
+  }
+  @media screen and (max-width: 1023px)
+.scroll-down {
+  width: 100%;
+  text-align: center;
+}
+.scroll-down {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+@media screen and (max-width: 1023px)
+.scroll-down:before {
+  margin: 0 auto;
+  height: 1px;
+  background: grey;
+  background: -webkit-linear-gradient(left, transparent, #ffffff, transparent);
+  background: linear-gradient(to right, transparent, #ffffff, transparent);
+  content: "";
+  width: 60%;
+  display: block;
+}
+.scroll-down:before {
+  margin: 0 auto 10px;
+  margin: 0 auto 0.625rem;
+  height: 1px;
+  background: grey;
+  background: -webkit-linear-gradient(left, transparent, #ffffff, transparent);
+  background: linear-gradient(to right, transparent, #ffffff, transparent);
+  content: "";
+  width: 340px;
+  display: block;
+}
+
+.glossar .scroll-down i {
+  color: #e97f0c;
+}
+@media screen and (max-width: 1023px)
+.scroll-down i {
+  font-size: 50px;
+  font-size: 3.125rem;
+  color: #2c7bbe;
+  text-align: center;
+}
+.scroll-down i {
+  font-size: 70px;
+  font-size: 4.375rem;
+  color: #2c7bbe;
+  text-align: center;
+  line-height: 1;
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'worricon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 1023px)
+.scroll-down span {
+  display: block;
+  margin: 0 0 16px 0;
+  margin: 0 0 1rem 0;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: .8;
+}
+.scroll-down span {
+  font-family: "freight-sans-pro", sans-serif;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: .025em;
+  display: block;
+  margin: 0 0 30px 0;
+  margin: 0 0 1.875rem 0;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
