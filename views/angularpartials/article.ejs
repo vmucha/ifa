@@ -20,10 +20,15 @@
     <div ng-switch-when="news">
         NEWSARTIKEL
         <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
-
     </div>
-  <div ng-switch-when="xhtml">XHTML</div>
-  <div ng-switch-when="video">VIDEO</div>
+  <div ng-switch-when="xhtml">
+        xhtml
+        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
+  </div>
+  <div ng-switch-when="video">
+        video
+        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
+  </div>
   <div ng-switch-default>text</div>
 </div>
                 

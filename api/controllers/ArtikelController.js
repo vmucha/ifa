@@ -30,12 +30,25 @@ module.exports = {
                 var bdata = JSON.parse(body);
                 bdata.articles[0].processedParagraphs = [];
                 bdata.articles[0].body = '';
-                for(var i=0;i<bdata.articles[0].paragraphs.length;i++) {
-                    for(var u=0;u<bdata.articles[0].paragraphs[i].parts.length;u++) {
-                        bdata.articles[0].processedParagraphs.push(bdata.articles[0].paragraphs[i].parts[u]);
-                    }
-                    bdata.articles[0].body += bdata.articles[0].paragraphs[i].openinigTag+bdata.articles[0].paragraphs[i].content+bdata.articles[0].paragraphs[i].openinigTag.replace("<","</");
+                switch(bdata.articles[0].type) {
+                    case "news":
+                        for(var i=0;i<bdata.articles[0].paragraphs.length;i++) {
+                            for(var u=0;u<bdata.articles[0].paragraphs[i].parts.length;u++) {
+                                bdata.articles[0].processedParagraphs.push(bdata.articles[0].paragraphs[i].parts[u]);
+                            }
+                            bdata.articles[0].body += bdata.articles[0].paragraphs[i].openinigTag+bdata.articles[0].paragraphs[i].content+bdata.articles[0].paragraphs[i].openinigTag.replace("<","</");
+                        }
+                        break;
+                    case "xhtml":
+                         bdata.articles[0].body += "TODO XHTML";
+                         break;
+                    case "video":
+                        bdata.articles[0].body += "TODO VIDEO";
+                        break;
+                    default:
+                        bdata.articles[0].body += "DEFAULT";
                 }
+                
                 res.send(bdata.articles);
             }
         });
