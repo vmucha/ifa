@@ -37,7 +37,7 @@
                         {{intro}}
                     </span>
 
-                    <div ng-if="articleType == 'news'">
+                    <div ng-if="articleType == 'news' || articleType == 'xhtml'">
                         <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
                     </div>
 
