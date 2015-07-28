@@ -28,7 +28,7 @@
                         </div>
                         <div ng-switch-when="video">
                             video
-                            <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
+                            <iframe ng-src="{{iframeURL}}" width="640" height="445" scrolling="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0" style="max-width:100%;"></iframe>
                         </div>
                         <div ng-switch-default>text</div>
                     </div>
