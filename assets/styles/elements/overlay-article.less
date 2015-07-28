@@ -1,0 +1,314 @@
+.overlay-article {
+    
+    background-color: #efefef;
+    color: #333;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    z-index: 999999;
+
+    .overlay-article-link-close-top {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        fill: @interaktive-glossar;
+        z-index: 9999;
+        height: 27px;
+        width: 27px;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+
+        i {
+            font-size: 30px;
+        }
+    }
+
+    .overlay-article-link-close-bottom {
+        svg {
+            height: 22px;
+            width: 22px;
+            fill: #2c2c2c;
+            position: relative;
+            top: 4px;
+            margin-right: 10px;
+        }
+    }
+
+    .overlay-article-content {
+        max-width: 940px;
+        margin: 0 auto;
+
+        .overlay-article-title {
+            .halfwidth();
+            .font-overlay-headline();
+            margin: 125px auto 26px;
+        }
+
+        .overlay-article-excerpt {
+            .halfwidth();
+            .font-overlay-teaser();
+            display: block;
+            margin: 0 auto 34px;
+        }
+
+        .overlay-article-tags {
+            .halfwidth();
+            margin: 26px auto;
+            color: grey;
+
+            .overlay-article-tags-title {
+                .font-overlay-tag-title();
+                padding: 0 12px 0 0;
+            }
+
+            .overlay-article-tag {
+                .font-overlay-tag();
+                padding-right: 12px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .overlay-article-text {
+
+            p {
+                .font-overlay-text();
+                .halfwidth();
+                margin: 0 auto 40px;
+            }
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto 50px;
+            }
+
+            video {
+                height: auto;
+                width: 100%;
+                margin: 0 auto 50px;
+            }
+        }
+
+        .overlay-article-end {
+            text-align: center;
+            margin: 70px 0 0 0;
+            padding: 70px 0 70px 0;
+            border-top: 1px solid #aeaeae;
+
+            p {
+                .halfwidth();
+                .font-overlay-hint();
+                margin: 0 auto 50px;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.overlay {
+    /*transform: scale(0.9);*/
+    width: 100%;
+}
+
+.popup_visible .overlay {
+    /*transform: scale(1);*/
+    position: static;
+    width: 100%;
+    z-index: 999999;
+}
+
+.overlay .overlay-article {
+    width: 96%;
+    margin: 2% auto;
+    position: relative;
+    max-width: 1144px;
+}
+
+.overlay .overlay-article .overlay-article-content .overlay-article-title {
+    margin: 0 auto;
+    padding: 140px 0 40px;
+}
+
+// static overlay
+.static-overlay {
+    background-color: #000;
+    position: absolute;
+    padding: 0 20px;
+    width: 100%;
+    z-index: 999999999;
+
+    .overlay-article {
+        position: relative;
+        max-width: 1080px;
+        margin: 20px auto;
+        padding-top: 2px;
+        width: initial;
+    }
+}
+
+.glossar .overlay-article .overlay-article-content .button i {
+    color: @interaktive-glossar;
+}
+
+.community .overlay-article .overlay-article-content .button i {
+    color: @interaktive-community;
+}
+
+@media screen and (max-width: @viewport-mobile-max-width) {
+    .community-article,
+    .glossar-overlay {
+        &.overlay-article {
+            .overlay-article-content {
+                padding: 0 15px;
+                /*
+                .overlay-article-title {
+                    font-size: 25px;
+                }
+
+                .overlay-article-excerpt {
+                    font-size: 15px;
+                    font-size: 17px;
+                }
+
+                .overlay-article-tags {
+                    .overlay-article-tags-title {
+                        font-size: 14px;
+                        font-size: 16px;
+                    }
+
+                    .overlay-article-tag {
+                        font-size: 14px;
+                        font-size: 16px;
+                    }
+                }
+
+                .sharebar .sharebar-inner .sharebar-headline {
+                    font-size: 14px;
+                    font-size: 16px;
+                }
+
+                .overlay-article-text p {
+                    font-size: 15px;
+                    font-size: 16px;
+                }
+
+                .overlay-article-end {
+                    p {
+                        font-size: 15px;
+                    }
+                }
+                */
+
+                .button {
+                    font-size: 18px;
+                    padding: 12px 0;
+                    width: 90%;
+                    margin-bottom: 25px;
+
+                    i {
+                        top: 2px;
+                    }
+                }
+            }
+        }
+
+        &.community-article .overlay-article-content .overlay-article-created {
+            font-size: 15px;
+            margin: 0 0 30px;
+            height: 40px;
+
+            span {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-excerpt {
+            margin-top: 15px;
+        }
+
+        &.overlay-article .overlay-article-link-close-top i {
+            font-size: 17px;
+        }
+
+        &.overlay-article .overlay-article-link-close-top {
+            right: 5px;
+            top: 15px;
+
+            svg {
+                height: 17px;
+                width: 17px;
+            }
+
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-title {
+            font-size: 25px;
+            line-height: 30px;
+            margin: 42px 0 16px;
+            width: 80%;
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-title {
+            padding: 42px 0 16px;
+            margin: 0;
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-excerpt {
+            font-size: 15px;
+            line-height: 24px;
+            margin: 0 0 13px;
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-tags {
+            margin: 0 0 30px;
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-tags .overlay-article-tags-title {
+            font-size: 14px;
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-tags .overlay-article-tag {
+            font-size: 14px;
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-text p {
+            font-size: 15px;
+            line-height: 24px;
+            margin: 0 auto 20px;
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-end {
+            margin: 48px 0 0 0;
+            padding: 25px 0 10px 0;
+        }
+
+        &.overlay-article .overlay-article-content .overlay-article-end p {
+            font-size: 15px;
+            line-height: 24px;
+        }
+
+        &.overlay-article .overlay-article-content .button {
+            font-size: 14px;
+            height: 35px;
+            line-height: 35px;
+            padding: 0;
+        }
+
+
+    }
+
+
+    .static-overlay {
+        padding: 5px;
+        margin: 0;
+
+        .overlay-article {
+            margin: 0;
+        }
+    }
+}

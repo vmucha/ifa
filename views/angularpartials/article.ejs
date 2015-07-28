@@ -1,23 +1,7 @@
-
-<p ng-repeat="paragraph in paragraphs2" ng-bind-html="to_trusted(paragraph.content)">
-</p>
-
-
-<div ng-switch="articleType">
-    <div ng-switch-when="news">
-        NEWSARTIKEL
-        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
-
-    </div>
-  <div ng-switch-when="xhtml">XHTML</div>
-  <div ng-switch-when="video">VIDEO</div>
-  <div ng-switch-default>text</div>
-</div>
+  <div ng-show="loaded" class="glossar-overlay">
+    <div class="overlay-article-content" ui-view>
 
 
-
-ENDE ENDE ENDE
-    
     <div class="js-ajax-content static-overlay" data-js-page="overlay">
         <div class="overlay-article glossar-overlay">
             <div class="overlay-article-content">
@@ -32,7 +16,21 @@ ENDE ENDE ENDE
         <span class="overlay-article-excerpt">
 			{{intro}}
         </span>
-
+<div ng-switch="articleType">
+    <div ng-switch-when="news">
+        NEWSARTIKEL
+        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
+    </div>
+  <div ng-switch-when="xhtml">
+        xhtml
+        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
+  </div>
+  <div ng-switch-when="video">
+        video
+        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
+  </div>
+  <div ng-switch-default>text</div>
+</div>
                 
                 socialbar
                 <div class="overlay-article-text">
@@ -50,7 +48,7 @@ ENDE ENDE ENDE
                 <div class="overlay-article-end">
                   
                     
-                    <a href="close"
+                    <a ui-sref="glossar({category:category.name})"
                        class="button white overlay-article-link overlay-article-link-close-bottom js-overlay-close">
                         <i class="icon-close_icon"></i>
                         Ansicht schließen
@@ -61,3 +59,4 @@ ENDE ENDE ENDE
         </div>
     </div>
 
+</div></div>
