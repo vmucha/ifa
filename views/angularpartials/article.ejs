@@ -4,10 +4,30 @@
 
         <div class="js-ajax-content static-overlay" data-js-page="overlay">
             <div class="overlay-article glossar-overlay">
+
+                    <div class="openerWrapper" ng-switch="articleType">
+                        <div ng-switch-when="news">
+                            aufmacher
+                            
+                        </div>
+                        <div ng-switch-when="xhtml">
+                            aufmacher ?
+                        </div>
+                        <div ng-switch-when="video">
+                            
+                            <div class="videoContainer">
+                                <iframe class="responsiveVideo" ng-src="{{iframeURL}}" scrolling="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0" style="max-width:100%;"></iframe>
+                            </div>
+                        </div>
+                        <div ng-switch-default>default ?</div>
+                    </div>
+
+
                 <div class="overlay-article-content">
                     <a ui-shref="glossar"
                        class="overlay-article-link-close-top overlay-article-link js-overlay-close">
                     </a>
+
                     <h4>{{kicker}}</h4>
 
                     <h1 class="overlay-article-title">
@@ -17,20 +37,8 @@
                         {{intro}}
                     </span>
 
-                    <div ng-switch="articleType">
-                        <div ng-switch-when="news">
-                            NEWSARTIKEL
-                            <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
-                        </div>
-                        <div ng-switch-when="xhtml">
-                            xhtml
-                            <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
-                        </div>
-                        <div ng-switch-when="video">
-                            video
-                            <iframe ng-src="{{iframeURL}}" width="640" height="445" scrolling="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0" style="max-width:100%;"></iframe>
-                        </div>
-                        <div ng-switch-default>text</div>
+                    <div ng-if="articleType == 'news'">
+                        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
                     </div>
 
                     <div class="overlay-article-end">
