@@ -6,8 +6,8 @@ app.controller('ArticleController', ['$state','$scope','articleService','$stateP
     $scope.intro = "";
     $scope.articleType = "";
     $scope.loaded = false;
-
     var articleId = $stateParams.articleId;
+    $scope.iframeURL = $sce.trustAsResourceUrl("http://www.welt.de/"+articleId+"?config=responsiveiframe&a=false&noredirect=true");
     console.log(articleId);
 
     function init() { 
@@ -25,7 +25,6 @@ app.controller('ArticleController', ['$state','$scope','articleService','$stateP
             showPopup();
         });
     }
-
     function showPopup() {
          $('.overlay').popup({
             autoopen: true,
