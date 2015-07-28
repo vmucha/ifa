@@ -36,7 +36,7 @@ module.exports = {
 					  			ids.push(bdata.articles[i].id);
 					  		}
 					  		Artikel.create(bdata.articles).exec(function(err,data) {
-					  			console.log("articles angelegt");
+					  			console.log("articles angelegt", data);
 					  			Category.create({
 					  				name:cat,
 					  				url:url,

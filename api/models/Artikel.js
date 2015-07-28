@@ -13,8 +13,8 @@ module.exports = {
         kicker: {type: 'string'},
         teaserImage: {type: 'string'},
         intro: {type: 'string'},
-        paragraphs: {type: 'array'},
-        body: {type: 'string'}
+        body: {type: 'string'},
+        type: {type: 'string'}
     }
 };
 
