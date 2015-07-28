@@ -34,12 +34,11 @@ app.controller('OverviewController',['$scope','$location','overviewService','$st
     $scope.loadArticles = {loading: true};
     var categoryName = $stateParams.category;
     $scope.category = categoryName;
-    function init() { 
+    function init() {
         overviewService.listArticles(categoryName,function(data){
             $scope.loadArticles.loading = false;
             $scope.articles = data;
         });
     }
     init();
-
 }]);

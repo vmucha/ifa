@@ -25,9 +25,6 @@ module.exports = {
 
     getContent: function (req, res) {
         var request = require('request');
-        Artikel.find({id: req.param('id')},function(err, found){
-            console.log(err,found);
-        });
         request('http://www.welt.de/article' + req.param('id') + '/?noredirect=true&config=jsn&' + Math.random(), function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var bdata = JSON.parse(body);
@@ -51,8 +48,13 @@ module.exports = {
                     default:
                         bdata.articles[0].body += "DEFAULT";
                 }
-                
-                res.send(bdata.articles);
+                Artikel.update({id: req.param('id')},{
+                    intro: bdata.articles[0].intro,
+                    paragraphs: bdata.articles[0].processedParagraphs,
+                    body: bdata.articles[0].body
+                }, function(err, updated){
+                    res.send(updated[0]);
+                });
             }
         });
     }

@@ -1,62 +1,50 @@
-  <div ng-show="loaded" class="glossar-overlay">
+<div ng-show="loaded" class="glossar-overlay">
     <div class="overlay-article-content" ui-view>
 
 
-    <div class="js-ajax-content static-overlay" data-js-page="overlay">
-        <div class="overlay-article glossar-overlay">
-            <div class="overlay-article-content">
-                <a ui-shref="glossar"
-                   class="overlay-article-link-close-top overlay-article-link js-overlay-close">
-                    
-                </a>
-                <h4>{{kicker}}</h4>
-                <h1 class="overlay-article-title">
-                    {{headline}}
-                </h1>
-        <span class="overlay-article-excerpt">
-			{{intro}}
-        </span>
-<div ng-switch="articleType">
-    <div ng-switch-when="news">
-        NEWSARTIKEL
-        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
-    </div>
-  <div ng-switch-when="xhtml">
-        xhtml
-        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
-  </div>
-  <div ng-switch-when="video">
-        video
-        <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
-  </div>
-  <div ng-switch-default>text</div>
-</div>
-                
-                socialbar
-                <div class="overlay-article-text">
-                    opener
-                        <img class="img-resposive" src="url" alt=""/>
-                    
-                    video
-                        <div class="js-videoplayer" data-video-poster="teaserimg" data-videos-urls="sources"></div>
-
-
-                    
-
-					xhtml
-					</div>
-                <div class="overlay-article-end">
-                  
-                    
-                    <a ui-sref="glossar({category:category.name})"
-                       class="button white overlay-article-link overlay-article-link-close-bottom js-overlay-close">
-                        <i class="icon-close_icon"></i>
-                        Ansicht schließen
+        <div class="js-ajax-content static-overlay" data-js-page="overlay">
+            <div class="overlay-article glossar-overlay">
+                <div class="overlay-article-content">
+                    <a ui-shref="glossar"
+                       class="overlay-article-link-close-top overlay-article-link js-overlay-close">
                     </a>
-                </div>
+                    <h4>{{kicker}}</h4>
 
+                    <h1 class="overlay-article-title">
+                        {{headline}}
+                    </h1>
+                    <span class="overlay-article-excerpt">
+                        {{intro}}
+                    </span>
+
+                    <div ng-switch="articleType">
+                        <div ng-switch-when="news">
+                            NEWSARTIKEL
+                            <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
+                        </div>
+                        <div ng-switch-when="xhtml">
+                            xhtml
+                            <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
+                        </div>
+                        <div ng-switch-when="video">
+                            video
+                            <div class="articlebody" ng-bind-html="to_trusted(body)"></div>
+                        </div>
+                        <div ng-switch-default>text</div>
+                    </div>
+
+                    <div class="overlay-article-end">
+
+                        <a ui-sref="^"
+                          class="button white overlay-article-link overlay-article-link-close-bottom js-overlay-close">
+                            <i class="icon-close_icon"></i>
+                            Ansicht schließen
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
 
-</div></div>
+    </div>
+</div>

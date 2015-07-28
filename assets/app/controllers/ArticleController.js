@@ -1,4 +1,4 @@
-app.controller('ArticleController', ['$scope','articleService','$stateParams','$sce',function ($scope,articleService,$stateParams,$sce) {
+app.controller('ArticleController', ['$state','$scope','articleService','$stateParams','$sce',function ($state,$scope,articleService,$stateParams,$sce) {
     $scope.content = [];
     $scope.paragraphs = [];
     $scope.body = "";
@@ -13,14 +13,13 @@ app.controller('ArticleController', ['$scope','articleService','$stateParams','$
     function init() { 
         console.log("init art");
         articleService.getContent(articleId,function(data){
-            console.log("cb2 art",data);
-            var data = data[0];
+            console.log("cb2 art");
             $scope.content = data;
             $scope.articleType = data.type;
             $scope.headline = data.title;
             $scope.intro = data.intro;
             $scope.kicker = data.kicker;
-            $scope.paragraphs = data.processedParagraphs;
+            $scope.paragraphs = data.paragraphs;
             $scope.body = data.body;
             $scope.loaded = true;
             showPopup();
@@ -39,7 +38,11 @@ app.controller('ArticleController', ['$scope','articleService','$stateParams','$
             //transition: 'all 0.5s',
             closeelement: '.js-overlay-close',
             vertical: 'top',
-            keepfocus: true
+            keepfocus: true,
+             onclose: function () {
+                 console.log('waff');
+                 $state.go('^');
+             }
         });
     }
     init();
