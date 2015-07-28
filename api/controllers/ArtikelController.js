@@ -25,6 +25,9 @@ module.exports = {
 
     getContent: function (req, res) {
         var request = require('request');
+        Artikel.find({id: req.param('id')},function(err, found){
+            console.log(err,found);
+        });
         request('http://www.welt.de/article' + req.param('id') + '/?noredirect=true&config=jsn&' + Math.random(), function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var bdata = JSON.parse(body);

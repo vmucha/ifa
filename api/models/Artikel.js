@@ -6,9 +6,7 @@
 */
 
 module.exports = {
-
   attributes: {
-
     id : { type: 'integer' },
 
     url : { type: 'string' },

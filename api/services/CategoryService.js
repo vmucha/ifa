@@ -46,24 +46,6 @@ module.exports = {
 					  				console.log("category angelegt");
 					  			})
 					  		});
-					  		/*for(var i=0;i<bdata.articles.length;i++) {
-					  			var art = bdata.articles[i];
-					  			art.teaserImage = art.teaserImage.replace("w1-h1","w400-h400-oo");
-					  			Artikel.create(art).exec(function(err, data){
-					  				length--;
-					  				console.log("success, gespeichert",length);
-					  				if(!length) {
-					  					  Artikel.find().exec(function(err,data) {
-												//res.view("overview",{articles:data});
-										});	
-					  				}
-					  			});
-					  		}*/
-
-					  		//var urlparts = bdata.data.result.items[0].url.split('/');
-					  		//var name = urlparts[urlparts.length-1];
-					  	//	console.log("erfolg!!",bdata);
-					  		//self.saveNetwork(data[idindex].id, 'twitter', name, null);
 					  }
 			});
 
